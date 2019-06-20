@@ -1,0 +1,16 @@
+FROM nginx:stable
+
+
+ENV NAME=test
+
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY index.html  /usr/share/nginx/html
+
+
+COPY entrypoint.sh entrypoint.sh
+
+ENTRYPOINT ["bash", "entrypoint.sh"] 
+
+
+
+
